@@ -463,7 +463,7 @@ h1 {
 @media screen and (max-width: 1180px) {
     .akceRight input[type="email"] {
         display: block;
-        margin: 0 auto 10px;
+        margin: 0 auto 5px;
     }
 
     .akceRight input[type="submit"] {
