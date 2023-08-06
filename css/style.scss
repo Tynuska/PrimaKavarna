@@ -1,4 +1,7 @@
-@import 'variables';
+@import '../partials/variables';
+@import '../partials/mixins';
+
+@include links;
 
 body {
   font-family: $font-family;
@@ -25,224 +28,78 @@ body {
   box-sizing: border-box;
 }
 
-a {
-  transition: all 0.3s ease-out;
-}
-
-a:hover {
-  transition: all 0.3s ease-out;
-}
-
 .container {
   margin: auto;
   width: 92%;
 }
 
-@media screen and (min-width: 1200px) {
-  .container {
-    width: 1100px;
-  }
-}
-
 // header
 @media screen and (max-width: $tablet) {
   .openTime {
-    display: none;
+    display: block;
   }
 }
 
 .topLine {
-  background: $secondary-color;
-  color: $text-light;
-  line-height: 37px;
-  font-size: $font-size--small;
-  font-family: $font-top-bot;
+  @include top-line;
 }
 
 .topLine span {
   margin-right: 20px;
-}
 
-.topLine span a {
-  color: $text-light;
-  text-decoration: none;
-}
+  a {
+    text-decoration: none;
+  }
 
-.topLine span a:hover {
-  color: $link-color;
-  text-decoration: underline;
+  a:hover {
+    color: $main-color;
+    text-decoration: underline;
+  }
 }
 
 .topLineSoc {
   float: right;
   font-size: 18px;
-}
 
-.topLineSoc a {
-  color: $text-light;
-}
-
-.topLineSoc a:hover {
-  color: $link-color;
+  a:hover {
+    color: $main-color;
+  }
 }
 
 .headerMenu {
   background: $ternary-color;
-}
 
-.headerMenu .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-.logo {
-  background: url('../img/logo-kavarna.png') center center no-repeat;
-  width: 300px;
-  height: 90px;
-}
+  .logo {
+    background: url('../img/logo-kavarna.png') center center no-repeat;
+    width: 300px;
+    height: 90px;
+  }
 
-.menu ul li {
-  display: inline-block;
-}
-
-.menu ul li a {
-  color: $text-light;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 700;
-  padding: 33px 15px;
-  display: block;
-  border-radius: 10px;
-}
-
-.menu ul li a:hover {
-  background: rgba(255, 255, 255, 0.3);
-}
-
-/*Hamburger*/
-.mmenu-icon-wrapper {
-  position: absolute;
-  top: 3.9em;
-  right: 1.5em;
-  height: 26px;
-  width: 26px;
-  cursor: pointer;
-  z-index: 2;
-}
-
-@media screen and (min-width: 480px) {
-  .mmenu-icon-wrapper {
-    top: 4.3em;
+  .menu ul li {
+    display: inline-block;
+  }
+  .menu ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 33px 15px;
+    display: block;
+    border-radius: 10px;
+  }
+  .menu ul li a:hover {
+    background: $secondary-color;
   }
 }
 
-@media screen and (min-width: $tablet) {
-  .mmenu-icon-wrapper {
-    top: 3.9em;
-  }
-}
-
-.mmenu-icon,
-.mmenu-icon:before,
-.mmenu-icon:after {
-  content: '';
-  position: absolute;
-  border-radius: 1em;
-  height: 2px;
-  width: 26px;
-  background: white;
-  transition: all 0.2s ease;
-}
-
-.mmenu-icon {
-  top: 0.75em;
-}
-
-.mmenu-icon:before {
-  top: -0.5em;
-}
-
-.mmenu-icon:after {
-  top: 0.5em;
-}
-
-.mmenu-active .mmenu-icon {
-  background: transparent;
-  transform: rotate(-135deg);
-}
-
-.mmenu-active .mmenu-icon:before,
-.mmenu-active .mmenu-icon:after {
-  top: 0;
-}
-
-.mmenu-active .mmenu-icon:before {
-  transform: rotate(90deg);
-}
-
-.mmenu-active .mmenu-icon,
-.mmenu-active .mmenu-icon:before,
-.mmenu-active .mmenu-icon:after {
-  background: white;
-}
-
-.mmenu-menu {
-  transition: all 0.4s ease;
-  opacity: 0;
-  pointer-events: none;
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.9) !important;
-  color: white;
-  text-align: center;
-  z-index: 2;
-}
-
-.mmenu-active .mmenu-menu {
-  opacity: 1;
-  pointer-events: initial;
-}
-
-.mmenu-menu ul {
-  display: block;
-  transition: all 0.4s ease;
-  padding: 0;
-  list-style-type: none;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1.2);
-  font-size: 20px;
-  line-height: 200%;
-}
-
-.mmenu-menu ul li a {
-  color: $text-light;
-  text-decoration: none;
-}
-
-.mmenu-menu ul li a:hover {
-  color: #5d9242;
-}
-
-.mmenu-active .mmenu-menu ul {
-  transform: translate(-50%, -50%) scale(1);
-}
-
-@media screen and (max-width: $desktop) {
+@media screen and (max-width: 960px) {
   .menu {
     display: none;
-  }
-}
-
-@media screen and (min-width: $desktop) {
-  .mmenu-menu,
-  .mmenu-icon-wrapper {
-    display: none !important;
   }
 }
 
@@ -262,22 +119,6 @@ header {
   font-weight: 200;
 }
 
-.slogan a {
-  color: #113524;
-  background: $main-color;
-  padding: 15px 30px;
-  border-radius: 10px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-weight: 700;
-  margin-top: 50px;
-  display: inline-block;
-}
-
-.slogan a:hover {
-  color: $text-light;
-}
-
 @media screen and (max-width: $desktop) {
   .slogan p {
     font-size: 26px;
@@ -288,10 +129,15 @@ header {
   .slogan {
     text-align: center;
   }
+}
 
-  .slogan a {
-    color: red;
-  }
+.main-button {
+  @include button;
+  margin-top: 50px;
+}
+
+.main-button:hover {
+  color: $text-light;
 }
 
 .headerLine {
@@ -315,29 +161,27 @@ header {
 }
 
 .headerLine p {
-  line-height: 22px;
+  line-height: $line-height;
 }
 
 @media screen and (max-width: $tablet) {
   .headerLine .container {
-    flex-direction: column-reverse;
+    flex-direction: column;
     padding-left: 30px;
   }
 }
 
-/*Section*/
+/* Section */
 .medovnik {
   background: $main-color;
   text-align: center;
   padding-bottom: 40px;
-  /* border-top: 10px solid red; */
 }
 
 h1 {
-  font-size: 43px;
+  @include headline-h1;
   padding: 30px 0 50px;
   text-align: center;
-  font-weight: 400;
 }
 
 .medovnik img {
@@ -346,9 +190,7 @@ h1 {
 }
 
 .medovnik h2 {
-  font-size: 53px;
-  font-weight: 900;
-  color: $ternary-color;
+  @include headline-h2;
 }
 
 @media screen and (max-width: 1200px) {
@@ -363,11 +205,10 @@ h1 {
 
 .akce {
   padding: 50px 0 120px;
-}
-
-.akce .container {
-  display: flex;
-  justify-content: space-between;
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
 .akceLeft,
@@ -376,13 +217,12 @@ h1 {
 }
 
 .akce h3 {
-  color: #555;
-  font-size: 23px;
+  @include headline-h3;
   padding-bottom: 40px;
 }
 
 .akce p {
-  line-height: 26px;
+  line-height: $line-height;
 }
 
 .akceRight p {
@@ -410,15 +250,11 @@ h1 {
 
 .akceRight input[type='submit']:hover {
   background-color: $main-color;
-  color: #000;
   cursor: pointer;
 }
 
-.cara {
-  background: #a37854;
-  width: 50px;
-  height: 5px;
-  margin-bottom: 30px;
+.line {
+  @include line;
 }
 
 @media screen and (max-width: 1200px) {
@@ -440,7 +276,7 @@ h1 {
     margin-bottom: 50px;
   }
 
-  .cara {
+  .line {
     margin: 0 auto 30px;
     width: 30%;
   }
@@ -459,30 +295,25 @@ h1 {
   color: $text-light;
   padding: 40px 0;
   font-size: $font-size--small;
-}
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  h4 {
+    padding-bottom: 25px;
+  }
+  ul li {
+    line-height: $line-height;
+    list-style: none;
+  }
+  ul li a {
+    text-decoration: none;
+  }
 
-.footer .container {
-  display: flex;
-  justify-content: space-between;
-}
-
-.footer h4 {
-  padding-bottom: 25px;
-}
-
-.footer ul li {
-  line-height: 24px;
-  list-style: none;
-}
-
-.footer ul li a {
-  color: $text-light;
-  text-decoration: none;
-}
-
-.footer ul li a:hover {
-  text-decoration: underline;
-  color: #000;
+  &:hover {
+    text-decoration: underline;
+    color: $text-dark;
+  }
 }
 
 .footerMenu ul li::first-letter {
@@ -526,29 +357,21 @@ h1 {
   font-size: $font-size--small;
   padding: 15px 0;
   font-family: $font-top-bot;
-}
 
-.copy .container {
-  display: flex;
-  justify-content: space-between;
-}
+  .container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+  a {
+    color: $text-dark;
+    text-decoration: none;
+    font-weight: 700;
+  }
 
-.copy a {
-  color: #616161;
-  text-decoration: none;
-  font-weight: 700;
-}
-
-.copy a:hover {
-  text-decoration: none;
-  color: $link-color;
-}
-
-.copy .container {
-  flex-direction: column;
-
-  .copyR {
-    margin-top: 5.5px;
+  &:hover {
+    text-decoration: none;
+    color: $main-color;
   }
 }
 

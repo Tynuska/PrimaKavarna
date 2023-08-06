@@ -1,0 +1,56 @@
+@mixin links {
+  a {
+    color: $text-light;
+  }
+}
+
+//header
+@mixin top-line {
+  background: $secondary-color;
+  color: $text-light;
+  line-height: 35px;
+  font-size: $font-size--small;
+  font-family: $font-top-bot;
+}
+
+//section
+@mixin headline-h1 {
+  color: $text-dark;
+  font: {
+    size: 43px;
+    weight: 400;
+  }
+}
+
+@mixin headline-h2 {
+  color: $ternary-color;
+  font: {
+    size: 53px;
+    weight: 900;
+  }
+}
+
+@mixin headline-h3 {
+  color: $text-dark;
+  font-size: 23px;
+}
+
+@mixin button {
+  color: #113524;
+  background: $main-color;
+  padding: 15px 30px;
+  border-radius: 10px;
+  text: {
+    decoration: none;
+    transform: uppercase;
+  }
+  font-weight: 700;
+  display: inline-block;
+}
+
+@mixin line {
+  background: $main-color;
+  width: 50px;
+  height: 5px;
+  margin-bottom: 30px;
+}
