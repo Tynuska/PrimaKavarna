@@ -38,7 +38,7 @@ body {
   }
 }
 .topLine {
-  background: rgba(0, 59, 39, 0.7);
+  background: rgba(8, 77, 53, 0.8);
   color: #fff;
   line-height: 35px;
   font-size: 14px;
@@ -65,7 +65,7 @@ body {
 }
 
 .headerMenu {
-  background: rgba(0, 99, 65, 0.8);
+  background: rgba(12, 138, 94, 0.7);
 }
 .headerMenu .container {
   display: flex;
@@ -89,7 +89,7 @@ body {
   border-radius: 10px;
 }
 .headerMenu .menu ul li a:hover {
-  background: rgba(0, 59, 39, 0.7);
+  background: #084d35;
 }
 
 @media screen and (max-width: 960px) {
@@ -180,7 +180,7 @@ h1 {
   color: #161718;
   font-size: 43px;
   font-weight: 400;
-  padding: 30px 0 50px;
+  padding: 30px;
   text-align: center;
 }
 
@@ -189,10 +189,11 @@ h1 {
   margin: 40px 0;
 }
 
-.medovnik h2 {
-  color: rgba(0, 99, 65, 0.8);
-  font-size: 53px;
-  font-weight: 900;
+h2 {
+  color: #0c8a5e;
+  font-size: 33px;
+  font-weight: 700;
+  padding: 20px 0;
 }
 
 @media screen and (max-width: 1200px) {
@@ -210,35 +211,33 @@ h1 {
   display: flex;
   justify-content: space-between;
 }
-
-.akceLeft,
-.akceRight {
-  flex: 0 1 45%;
-}
-
 .akce h3 {
   color: #161718;
   font-size: 23px;
   padding-bottom: 40px;
 }
-
 .akce p {
   line-height: 23px;
 }
 
+.akceLeft {
+  flex: 0 1 45%;
+}
+
+.akceRight {
+  flex: 0 1 45%;
+}
 .akceRight p {
   margin-bottom: 10px;
 }
-
 .akceRight input[type=email] {
   padding: 15px;
   font-size: 16px;
   width: 70%;
   margin-bottom: 10px;
 }
-
 .akceRight input[type=submit] {
-  background-color: rgba(0, 59, 39, 0.7);
+  background-color: #084d35;
   color: #fff;
   text-transform: uppercase;
   border: none;
@@ -248,7 +247,6 @@ h1 {
   transition: all 0.3s ease-out;
   display: block;
 }
-
 .akceRight input[type=submit]:hover {
   background-color: #dcb08b;
   cursor: pointer;
@@ -287,9 +285,115 @@ h1 {
     text-align: center;
   }
 }
+/*Nabidka*/
+.nabidka {
+  padding-bottom: 50px;
+  text-align: center;
+}
+.nabidka p {
+  line-height: 23px;
+}
+.nabidka h2 {
+  border-bottom: 1px solid #ccc;
+  width: 50%;
+  margin: 0 auto;
+}
+
+/*Kontakt*/
+.kontakt {
+  padding-bottom: 50px;
+}
+
+.otevreno {
+  width: 30%;
+}
+
+.adresaOtevreno {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+}
+.adresaOtevreno p {
+  line-height: 23px;
+}
+
+.adresaOtevreno p span {
+  font-weight: 700;
+  color: #dcb08b;
+}
+
+.adresaOtevreno p a {
+  color: #000;
+  text-decoration: none;
+}
+
+.adresaOtevreno p a:hover {
+  color: #a37854;
+  text-decoration: underline;
+}
+
+.adresaOtevreno p i {
+  margin-right: 15px;
+}
+
+.karty {
+  text-align: center;
+}
+
+.map iframe {
+  width: 100%;
+  background: #000;
+  padding: 5px 0;
+  margin: 30px 0;
+}
+
+.kontaktForm {
+  text-align: center;
+}
+
+.kontaktForm input[type=text],
+.kontaktForm textarea {
+  display: block;
+  padding: 15px;
+  font-size: 16px;
+  width: 70%;
+  margin: 0 auto 5px;
+}
+
+.kontaktForm textarea {
+  height: 130px;
+  font-family: "Raleway", sans-serif;
+  border-color: #ccc;
+}
+
+/*Rezervace*/
+.rezervace {
+  padding-bottom: 50px;
+}
+.rezervace p i {
+  margin: 0 15px 8px 0;
+}
+.rezervace p a {
+  color: #000;
+  text-decoration: none;
+}
+.rezervace p span {
+  color: #a37854;
+  font-weight: 700;
+}
+
+.rezText {
+  padding-bottom: 30px;
+}
+
+.rezervace p a:hover {
+  color: #a37854;
+  text-decoration: underline;
+}
+
 /*Footer*/
 .footer {
-  background: rgba(0, 99, 65, 0.8);
+  background: #0c8a5e;
   color: #fff;
   padding: 40px 0;
   font-size: 14px;
@@ -299,7 +403,7 @@ h1 {
   justify-content: space-between;
 }
 .footer h4 {
-  padding-bottom: 25px;
+  padding-bottom: 10px;
 }
 .footer ul li {
   line-height: 23px;
@@ -308,17 +412,13 @@ h1 {
 .footer ul li a {
   text-decoration: none;
 }
-.footer:hover {
+
+.footerMenu {
+  flex-basis: 40%;
+}
+.footerMenu .footerMenu ul li a:hover {
   text-decoration: underline;
-  color: #161718;
-}
-
-.footerMenu ul li::first-letter {
-  text-transform: uppercase;
-}
-
-.footerMenu ul li a {
-  text-transform: lowercase;
+  color: #dcb08b;
 }
 
 .footerKontakt {
@@ -326,31 +426,23 @@ h1 {
 }
 
 @media screen and (max-width: 980px) {
-  .footerKontakt {
-    flex-basis: auto;
+  .footer .container {
+    justify-content: flex-start;
   }
 }
-.footer .container {
-  justify-content: flex-start;
-}
-
-.footerMenu {
-  flex-basis: 40%;
-}
-
 @media screen and (max-width: 740px) {
   .footer .container {
     flex-direction: column;
     text-align: center;
   }
   .footerMenu {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
 }
 .copy {
   font-size: 14px;
+  font-font-family: "Roboto", sans-serif;
   padding: 15px 0;
-  font-family: "Roboto", sans-serif;
 }
 .copy .container {
   display: flex;
@@ -362,8 +454,7 @@ h1 {
   text-decoration: none;
   font-weight: 700;
 }
-.copy:hover {
-  text-decoration: none;
+.copy a:hover {
   color: #dcb08b;
 }
 

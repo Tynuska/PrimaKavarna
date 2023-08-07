@@ -6,7 +6,7 @@
 
 //header
 @mixin top-line {
-  background: $secondary-color;
+  background: transparentize($secondary-color, 0.2);
   color: $text-light;
   line-height: 35px;
   font-size: $font-size--small;
@@ -25,9 +25,10 @@
 @mixin headline-h2 {
   color: $ternary-color;
   font: {
-    size: 53px;
-    weight: 900;
+    size: 33px;
+    weight: 700;
   }
+  padding: 20px 0;
 }
 
 @mixin headline-h3 {

@@ -1,6 +1,5 @@
 @import '../partials/variables';
 @import '../partials/mixins';
-
 @include links;
 
 body {
@@ -49,11 +48,10 @@ body {
 
   a {
     text-decoration: none;
-  }
-
-  a:hover {
-    color: $main-color;
-    text-decoration: underline;
+    &:hover {
+      color: $main-color;
+      text-decoration: underline;
+    }
   }
 }
 
@@ -67,7 +65,7 @@ body {
 }
 
 .headerMenu {
-  background: $ternary-color;
+  background: transparentize($ternary-color, 0.3);
 
   .container {
     display: flex;
@@ -180,7 +178,7 @@ header {
 
 h1 {
   @include headline-h1;
-  padding: 30px 0 50px;
+  padding: 30px;
   text-align: center;
 }
 
@@ -189,7 +187,7 @@ h1 {
   margin: 40px 0;
 }
 
-.medovnik h2 {
+h2 {
   @include headline-h2;
 }
 
@@ -209,48 +207,47 @@ h1 {
     display: flex;
     justify-content: space-between;
   }
+
+  h3 {
+    @include headline-h3;
+    padding-bottom: 40px;
+  }
+
+  p {
+    line-height: $line-height;
+  }
 }
 
-.akceLeft,
-.akceRight {
+.akceLeft {
   flex: 0 1 45%;
 }
 
-.akce h3 {
-  @include headline-h3;
-  padding-bottom: 40px;
-}
-
-.akce p {
-  line-height: $line-height;
-}
-
-.akceRight p {
-  margin-bottom: 10px;
-}
-
-.akceRight input[type='email'] {
-  padding: 15px;
-  font-size: $font-size;
-  width: 70%;
-  margin-bottom: 10px;
-}
-
-.akceRight input[type='submit'] {
-  background-color: $secondary-color;
-  color: $text-light;
-  text-transform: uppercase;
-  border: none;
-  padding: 17px 30px;
-  font-weight: 700;
-  font-size: $font-size;
-  transition: all 0.3s ease-out;
-  display: block;
-}
-
-.akceRight input[type='submit']:hover {
-  background-color: $main-color;
-  cursor: pointer;
+.akceRight {
+  flex: 0 1 45%;
+  p {
+    margin-bottom: 10px;
+  }
+  input[type='email'] {
+    padding: 15px;
+    font-size: $font-size;
+    width: 70%;
+    margin-bottom: 10px;
+  }
+  input[type='submit'] {
+    background-color: $secondary-color;
+    color: $text-light;
+    text-transform: uppercase;
+    border: none;
+    padding: 17px 30px;
+    font-weight: 700;
+    font-size: $font-size;
+    transition: all 0.3s ease-out;
+    display: block;
+  }
+  input[type='submit']:hover {
+    background-color: $main-color;
+    cursor: pointer;
+  }
 }
 
 .line {
@@ -289,6 +286,114 @@ h1 {
   }
 }
 
+/*Nabidka*/
+.nabidka {
+  padding-bottom: 50px;
+  text-align: center;
+  p {
+    line-height: $line-height;
+  }
+
+  h2 {
+    border-bottom: 1px solid #ccc;
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
+/*Kontakt*/
+.kontakt {
+  padding-bottom: 50px;
+}
+
+.otevreno {
+  width: 30%;
+}
+
+.adresaOtevreno {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  p {
+    line-height: $line-height;
+  }
+}
+
+.adresaOtevreno p span {
+  font-weight: 700;
+  color: $main-color;
+}
+
+.adresaOtevreno p a {
+  color: #000;
+  text-decoration: none;
+}
+
+.adresaOtevreno p a:hover {
+  color: #a37854;
+  text-decoration: underline;
+}
+
+.adresaOtevreno p i {
+  margin-right: 15px;
+}
+
+.karty {
+  text-align: center;
+}
+
+.map iframe {
+  width: 100%;
+  background: #000;
+  padding: 5px 0;
+  margin: 30px 0;
+}
+
+.kontaktForm {
+  text-align: center;
+}
+
+.kontaktForm input[type='text'],
+.kontaktForm textarea {
+  display: block;
+  padding: 15px;
+  font-size: 16px;
+  width: 70%;
+  margin: 0 auto 5px;
+}
+
+.kontaktForm textarea {
+  height: 130px;
+  font-family: 'Raleway', sans-serif;
+  border-color: #ccc;
+}
+
+/*Rezervace*/
+.rezervace {
+  padding-bottom: 50px;
+  p i {
+    margin: 0 15px 8px 0;
+  }
+  p a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  p span {
+    color: #a37854;
+    font-weight: 700;
+  }
+}
+
+.rezText {
+  padding-bottom: 30px;
+}
+
+.rezervace p a:hover {
+  color: #a37854;
+  text-decoration: underline;
+}
+
 /*Footer*/
 .footer {
   background: $ternary-color;
@@ -300,28 +405,24 @@ h1 {
     justify-content: space-between;
   }
   h4 {
-    padding-bottom: 25px;
+    padding-bottom: 10px;
   }
   ul li {
     line-height: $line-height;
     list-style: none;
   }
+
   ul li a {
     text-decoration: none;
   }
+}
 
-  &:hover {
+.footerMenu {
+  flex-basis: 40%;
+  .footerMenu ul li a:hover {
     text-decoration: underline;
-    color: $text-dark;
+    color: $main-color;
   }
-}
-
-.footerMenu ul li::first-letter {
-  text-transform: uppercase;
-}
-
-.footerMenu ul li a {
-  text-transform: lowercase;
 }
 
 .footerKontakt {
@@ -329,17 +430,9 @@ h1 {
 }
 
 @media screen and (max-width: $desktop) {
-  .footerKontakt {
-    flex-basis: auto;
+  .footer .container {
+    justify-content: flex-start;
   }
-}
-
-.footer .container {
-  justify-content: flex-start;
-}
-
-.footerMenu {
-  flex-basis: 40%;
 }
 
 @media screen and (max-width: $tablet) {
@@ -349,29 +442,30 @@ h1 {
   }
 
   .footerMenu {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
   }
 }
 
 .copy {
-  font-size: $font-size--small;
+  font: {
+    size: $font-size--small;
+    font-family: $font-top-bot;
+  }
   padding: 15px 0;
-  font-family: $font-top-bot;
 
   .container {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
   }
+
   a {
     color: $text-dark;
     text-decoration: none;
     font-weight: 700;
-  }
-
-  &:hover {
-    text-decoration: none;
-    color: $main-color;
+    &:hover {
+      color: $main-color;
+    }
   }
 }
 
