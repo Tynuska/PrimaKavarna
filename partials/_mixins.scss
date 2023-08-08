@@ -1,6 +1,35 @@
 @mixin links {
   a {
     color: $text-light;
+    text-decoration: none;
+    &:hover {
+      color: $main-color;
+      text-decoration: underline;
+    }
+  }
+}
+
+@mixin headers {
+  h1 {
+    color: $text-dark;
+    font: {
+      size: 43px;
+      weight: 400;
+    }
+  }
+
+  h2 {
+    color: $ternary-color;
+    font: {
+      size: 33px;
+      weight: 700;
+    }
+    padding: 20px 0;
+  }
+
+  h3 {
+    color: $text-dark;
+    font-size: 23px;
   }
 }
 
@@ -13,33 +42,11 @@
   font-family: $font-top-bot;
 }
 
-//section
-@mixin headline-h1 {
-  color: $text-dark;
-  font: {
-    size: 43px;
-    weight: 400;
-  }
-}
-
-@mixin headline-h2 {
-  color: $ternary-color;
-  font: {
-    size: 33px;
-    weight: 700;
-  }
-  padding: 20px 0;
-}
-
-@mixin headline-h3 {
-  color: $text-dark;
-  font-size: 23px;
-}
-
 @mixin button {
   color: #113524;
   background: $main-color;
   padding: 15px 30px;
+  border: none;
   border-radius: 10px;
   text: {
     decoration: none;
@@ -47,6 +54,10 @@
   }
   font-weight: 700;
   display: inline-block;
+  &:hover {
+    color: $text-light;
+    text-decoration: none;
+  }
 }
 
 @mixin line {
@@ -54,4 +65,14 @@
   width: 50px;
   height: 5px;
   margin-bottom: 30px;
+}
+
+// section
+@mixin link-text {
+  color: $main-color;
+  text-decoration: none;
+  &:hover {
+    color: $secondary-color;
+    text-decoration: underline;
+  }
 }

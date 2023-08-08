@@ -1,6 +1,5 @@
 @import '../partials/variables';
 @import '../partials/mixins';
-@include links;
 
 body {
   font-family: $font-family;
@@ -27,6 +26,9 @@ body {
   box-sizing: border-box;
 }
 
+@include links;
+@include headers;
+
 .container {
   margin: auto;
   width: 92%;
@@ -45,14 +47,6 @@ body {
 
 .topLine span {
   margin-right: 20px;
-
-  a {
-    text-decoration: none;
-    &:hover {
-      color: $main-color;
-      text-decoration: underline;
-    }
-  }
 }
 
 .topLineSoc {
@@ -81,17 +75,18 @@ body {
 
   .menu ul li {
     display: inline-block;
-  }
-  .menu ul li a {
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 700;
-    padding: 33px 15px;
-    display: block;
-    border-radius: 10px;
-  }
-  .menu ul li a:hover {
-    background: $secondary-color;
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 33px 15px;
+      display: block;
+      border-radius: 10px;
+
+      &:hover {
+        background: $secondary-color;
+      }
+    }
   }
 }
 
@@ -110,11 +105,10 @@ header {
   text-align: right;
   color: $text-light;
   padding: 65px 0 165px;
-}
-
-.slogan p {
-  font-size: 34px;
-  font-weight: 200;
+  p {
+    font-size: 34px;
+    font-weight: 200;
+  }
 }
 
 @media screen and (max-width: $desktop) {
@@ -134,18 +128,16 @@ header {
   margin-top: 50px;
 }
 
-.main-button:hover {
-  color: $text-light;
-}
-
 .headerLine {
   color: $text-light;
   background: rgba(0, 0, 0, 0.6);
-}
-
-.headerLine .container {
-  display: flex;
-  justify-content: flex-end;
+  .container {
+    display: flex;
+    justify-content: flex-end;
+  }
+  p {
+    line-height: $line-height;
+  }
 }
 
 .tym {
@@ -156,10 +148,6 @@ header {
 .kava {
   background: url('../img/img1.png') left center no-repeat;
   padding: 20px 0 20px 70px;
-}
-
-.headerLine p {
-  line-height: $line-height;
 }
 
 @media screen and (max-width: $tablet) {
@@ -177,7 +165,6 @@ header {
 }
 
 h1 {
-  @include headline-h1;
   padding: 30px;
   text-align: center;
 }
@@ -185,10 +172,6 @@ h1 {
 .medovnik img {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
   margin: 40px 0;
-}
-
-h2 {
-  @include headline-h2;
 }
 
 @media screen and (max-width: 1200px) {
@@ -209,7 +192,6 @@ h2 {
   }
 
   h3 {
-    @include headline-h3;
     padding-bottom: 40px;
   }
 
@@ -232,21 +214,6 @@ h2 {
     font-size: $font-size;
     width: 70%;
     margin-bottom: 10px;
-  }
-  input[type='submit'] {
-    background-color: $secondary-color;
-    color: $text-light;
-    text-transform: uppercase;
-    border: none;
-    padding: 17px 30px;
-    font-weight: 700;
-    font-size: $font-size;
-    transition: all 0.3s ease-out;
-    display: block;
-  }
-  input[type='submit']:hover {
-    background-color: $main-color;
-    cursor: pointer;
   }
 }
 
@@ -299,6 +266,10 @@ h2 {
     width: 50%;
     margin: 0 auto;
   }
+
+  div {
+    padding-top: 25px;
+  }
 }
 
 /*Kontakt*/
@@ -306,32 +277,16 @@ h2 {
   padding-bottom: 50px;
 }
 
-.otevreno {
-  width: 30%;
-}
-
 .adresaOtevreno {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-bottom: 50px;
   p {
     line-height: $line-height;
+    a {
+      @include link-text;
+    }
   }
-}
-
-.adresaOtevreno p span {
-  font-weight: 700;
-  color: $main-color;
-}
-
-.adresaOtevreno p a {
-  color: #000;
-  text-decoration: none;
-}
-
-.adresaOtevreno p a:hover {
-  color: #a37854;
-  text-decoration: underline;
 }
 
 .adresaOtevreno p i {
@@ -371,17 +326,13 @@ h2 {
 /*Rezervace*/
 .rezervace {
   padding-bottom: 50px;
-  p i {
+  i {
     margin: 0 15px 8px 0;
   }
-  p a {
-    color: #000;
-    text-decoration: none;
-  }
 
-  p span {
-    color: #a37854;
-    font-weight: 700;
+  h3 {
+    text-align: center;
+    padding-top: 25px;
   }
 }
 
@@ -389,9 +340,10 @@ h2 {
   padding-bottom: 30px;
 }
 
-.rezervace p a:hover {
-  color: #a37854;
-  text-decoration: underline;
+.rezIkon {
+  a {
+    @include link-text;
+  }
 }
 
 /*Footer*/
@@ -410,10 +362,6 @@ h2 {
   ul li {
     line-height: $line-height;
     list-style: none;
-  }
-
-  ul li a {
-    text-decoration: none;
   }
 }
 
@@ -449,7 +397,7 @@ h2 {
 .copy {
   font: {
     size: $font-size--small;
-    font-family: $font-top-bot;
+    family: $font-top-bot;
   }
   padding: 15px 0;
 

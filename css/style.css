@@ -1,7 +1,3 @@
-a {
-  color: #fff;
-}
-
 body {
   font-family: "Raleway", sans-serif;
   font-size: 16px;
@@ -27,6 +23,33 @@ body {
   box-sizing: border-box;
 }
 
+a {
+  color: #fff;
+  text-decoration: none;
+}
+a:hover {
+  color: #dcb08b;
+  text-decoration: underline;
+}
+
+h1 {
+  color: #161718;
+  font-size: 43px;
+  font-weight: 400;
+}
+
+h2 {
+  color: #0c8a5e;
+  font-size: 33px;
+  font-weight: 700;
+  padding: 20px 0;
+}
+
+h3 {
+  color: #161718;
+  font-size: 23px;
+}
+
 .container {
   margin: auto;
   width: 92%;
@@ -47,13 +70,6 @@ body {
 
 .topLine span {
   margin-right: 20px;
-}
-.topLine span a {
-  text-decoration: none;
-}
-.topLine span a:hover {
-  color: #dcb08b;
-  text-decoration: underline;
 }
 
 .topLineSoc {
@@ -107,7 +123,6 @@ header {
   color: #fff;
   padding: 65px 0 165px;
 }
-
 .slogan p {
   font-size: 34px;
   font-weight: 200;
@@ -127,6 +142,7 @@ header {
   color: #113524;
   background: #dcb08b;
   padding: 15px 30px;
+  border: none;
   border-radius: 10px;
   text-decoration: none;
   text-transform: uppercase;
@@ -134,19 +150,21 @@ header {
   display: inline-block;
   margin-top: 50px;
 }
-
 .main-button:hover {
   color: #fff;
+  text-decoration: none;
 }
 
 .headerLine {
   color: #fff;
   background: rgba(0, 0, 0, 0.6);
 }
-
 .headerLine .container {
   display: flex;
   justify-content: flex-end;
+}
+.headerLine p {
+  line-height: 23px;
 }
 
 .tym {
@@ -157,10 +175,6 @@ header {
 .kava {
   background: url("../img/img1.png") left center no-repeat;
   padding: 20px 0 20px 70px;
-}
-
-.headerLine p {
-  line-height: 23px;
 }
 
 @media screen and (max-width: 740px) {
@@ -177,9 +191,6 @@ header {
 }
 
 h1 {
-  color: #161718;
-  font-size: 43px;
-  font-weight: 400;
   padding: 30px;
   text-align: center;
 }
@@ -187,13 +198,6 @@ h1 {
 .medovnik img {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
   margin: 40px 0;
-}
-
-h2 {
-  color: #0c8a5e;
-  font-size: 33px;
-  font-weight: 700;
-  padding: 20px 0;
 }
 
 @media screen and (max-width: 1200px) {
@@ -212,8 +216,6 @@ h2 {
   justify-content: space-between;
 }
 .akce h3 {
-  color: #161718;
-  font-size: 23px;
   padding-bottom: 40px;
 }
 .akce p {
@@ -235,21 +237,6 @@ h2 {
   font-size: 16px;
   width: 70%;
   margin-bottom: 10px;
-}
-.akceRight input[type=submit] {
-  background-color: #084d35;
-  color: #fff;
-  text-transform: uppercase;
-  border: none;
-  padding: 17px 30px;
-  font-weight: 700;
-  font-size: 16px;
-  transition: all 0.3s ease-out;
-  display: block;
-}
-.akceRight input[type=submit]:hover {
-  background-color: #dcb08b;
-  cursor: pointer;
 }
 
 .line {
@@ -298,37 +285,29 @@ h2 {
   width: 50%;
   margin: 0 auto;
 }
+.nabidka div {
+  padding-top: 25px;
+}
 
 /*Kontakt*/
 .kontakt {
   padding-bottom: 50px;
 }
 
-.otevreno {
-  width: 30%;
-}
-
 .adresaOtevreno {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin-bottom: 50px;
 }
 .adresaOtevreno p {
   line-height: 23px;
 }
-
-.adresaOtevreno p span {
-  font-weight: 700;
-  color: #dcb08b;
-}
-
 .adresaOtevreno p a {
-  color: #000;
+  color: #dcb08b;
   text-decoration: none;
 }
-
 .adresaOtevreno p a:hover {
-  color: #a37854;
+  color: #084d35;
   text-decoration: underline;
 }
 
@@ -370,24 +349,24 @@ h2 {
 .rezervace {
   padding-bottom: 50px;
 }
-.rezervace p i {
+.rezervace i {
   margin: 0 15px 8px 0;
 }
-.rezervace p a {
-  color: #000;
-  text-decoration: none;
-}
-.rezervace p span {
-  color: #a37854;
-  font-weight: 700;
+.rezervace h3 {
+  text-align: center;
+  padding-top: 25px;
 }
 
 .rezText {
   padding-bottom: 30px;
 }
 
-.rezervace p a:hover {
-  color: #a37854;
+.rezIkon a {
+  color: #dcb08b;
+  text-decoration: none;
+}
+.rezIkon a:hover {
+  color: #084d35;
   text-decoration: underline;
 }
 
@@ -408,9 +387,6 @@ h2 {
 .footer ul li {
   line-height: 23px;
   list-style: none;
-}
-.footer ul li a {
-  text-decoration: none;
 }
 
 .footerMenu {
@@ -441,7 +417,7 @@ h2 {
 }
 .copy {
   font-size: 14px;
-  font-font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif;
   padding: 15px 0;
 }
 .copy .container {
